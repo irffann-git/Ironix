@@ -1,0 +1,125 @@
+.oops-long-404 {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('/oops.jpg') center/cover no-repeat fixed;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+/* Semi-transparent overlay for better text contrast */
+.oops-long-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* subtle overlay, adjust as needed */
+  z-index: 1;
+}
+
+.oops-long-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.66); /* slightly darker for readability */
+  padding: 40px 60px; /* more padding for breathing room */
+  border-radius: 50px; /* softer corners */
+  backdrop-filter: blur(1px); /* optional frosted glass effect */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6); /* deeper shadow */
+}
+
+.oops-long-heading {
+  font-size: 4rem;
+  font-weight: 800;
+  color: white;
+  margin: 0;
+  line-height: 1;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+.oops-long-text {
+  font-size: 1rem;
+  margin: 20px 0 30px;
+  line-height: 1.8;
+  color: #eee;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.oops-long-btn {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #eee;
+  color: black;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 14px 40px;
+  border-radius: 60px;
+  text-decoration: none;
+  transition: color 0.3s ease; /* transition for text color */
+  border: 2px solid #eee;
+  font-size: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.oops-long-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: black; /* or #f1c40f for yellow */
+  transition: width 0.4s ease;
+  z-index: -1;
+}
+
+.oops-long-btn:hover::before {
+  width: 100%;
+}
+
+.oops-long-btn:hover {
+  color: white; /* text turns white on hover */
+  border-color: black; /* optional: match border to fill color */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .oops-long-content {
+    padding: 30px 20px;
+  }
+  .oops-long-heading {
+    font-size: 4.5rem;
+  }
+  .oops-long-text {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  .oops-long-btn {
+    padding: 12px 30px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .oops-long-heading {
+    font-size: 3.5rem;
+  }
+  .oops-long-text {
+    font-size: 0.95rem;
+  }
+  .oops-long-btn {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
+}

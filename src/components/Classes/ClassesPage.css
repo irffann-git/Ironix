@@ -1,0 +1,134 @@
+
+
+.classes-hero {
+  position: relative;
+  width: 100%;
+  height: 800px; /* consistent with homepage */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.classes-hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.classes-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.classes-content-box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 350px; /* reduced from 350px – adjust to your preference */
+}
+
+.classes-hero-content {
+  position: relative;
+  z-index: 2;
+  /* display: flex; */
+  gap: 30px;
+  max-width: 1000px;
+  width: 100%;
+  padding: 0 20px;
+  justify-content: center;
+  flex-wrap: wrap; /* allows stacking on small screens */
+}
+
+.classes-hero-content h1 {
+  font-size: 70px;
+  font-family: "Zen Dots", sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.classes-first {
+  background: linear-gradient(to bottom, #ffffff 30%, #000000 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-align: start;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.classes-last {
+  background: linear-gradient(to bottom, #f1c40f 50%, #000000 100%);
+  background-clip: text;
+  text-align: end;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .classes-hero-content h1 {
+    font-size: 60px;
+  }
+  .classes-hero-content {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .classes-hero {
+    height: 600px;
+  }
+  .classes-content-box {
+    padding-bottom: 200px;
+  }
+  .classes-hero-content h1 {
+    font-size: 45px;
+  }
+  .classes-hero-content {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .classes-hero-content {
+    /* flex-direction: column;  stack vertically */
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+  }
+  .classes-hero-content h1 {
+    font-size: 40px;
+  }
+  /* remove individual text alignment if needed */
+  .classes-first, .about-last {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .classes-hero {
+    height: 500px;
+  }
+  .classes-content-box {
+    padding-bottom: 200px;
+  }
+  .classes-hero-content h1 {
+    font-size: 22px;
+  }
+}
+
