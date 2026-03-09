@@ -27,8 +27,8 @@ function ContactPage() {
           <div className="contact-hero-overlay"></div>
           <div className="contact-content-box">
             <div className="contact-hero-content">
-              <h1 className="contact-first">Contact Our Team</h1>
-              <h1 className="contact-last">Let’s Talk Fitness</h1>
+              <h1 className="contact-first">Let’s Talk</h1>
+              <h1 className="contact-last"> about Fitness</h1>
             </div>
           </div>
         </div>
