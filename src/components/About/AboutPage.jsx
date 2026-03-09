@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-import './About.css';
+import './AboutPage.css';
 import { useEffect, useRef, useState } from 'react';
 
-function About() {
+function AboutPage() {
 
  const contentRef = useRef(null);
 
@@ -289,4 +289,4 @@ function About() {
   );
 }
 
-export default About;
+export default AboutPage;

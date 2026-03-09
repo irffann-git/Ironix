@@ -63,10 +63,6 @@ function ClassesPage() {
             </div>
 
           </div>
-
-          <div className="view-btn-wrapper">
-            <button className="view-btn">View All</button>
-          </div>
         </div>
         
       </div>
