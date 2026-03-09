@@ -92,7 +92,7 @@
 
 @media (max-width: 768px) {
   .contact-hero {
-    height: 600px;
+    height: 800px;
   }
   .contact-content-box {
     padding-bottom: 200px;
@@ -123,7 +123,7 @@
 
 @media (max-width: 480px) {
   .contact-hero {
-    height: 500px;
+    height: 700px;
   }
   .contact-content-box {
     padding-bottom: 200px;

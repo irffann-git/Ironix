@@ -91,7 +91,7 @@
 
 @media (max-width: 768px) {
   .classes-hero {
-    height: 600px;
+    height: 800px;
   }
   .classes-content-box {
     padding-bottom: 200px;
@@ -122,7 +122,7 @@
 
 @media (max-width: 480px) {
   .classes-hero {
-    height: 500px;
+    height: 700px;
   }
   .classes-content-box {
     padding-bottom: 200px;

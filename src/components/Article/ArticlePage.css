@@ -210,7 +210,7 @@ width:100%;
 /* ----- Responsive ----- */
 @media (max-width: 768px) {
   .article-hero {
-    height: 50vh;
+    height: 800px;
     min-height: 400px;
   }
   .article-title {

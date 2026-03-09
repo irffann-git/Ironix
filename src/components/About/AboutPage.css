@@ -89,7 +89,7 @@
 
 @media (max-width: 768px) {
   .about-hero {
-    height: 600px;
+    height: 800px;
   }
   .about-content-box {
     padding-bottom: 200px;
@@ -120,7 +120,7 @@
 
 @media (max-width: 480px) {
   .about-hero {
-    height: 500px;
+    height: 700px;
   }
   .about-content-box {
     padding-bottom: 200px;

@@ -75,12 +75,6 @@
   letter-spacing: 1px;
 }
 
-/* Responsive adjustments */
-@media (max-width: 1980px) {
-  .hero-section {
-    height: 720px;
-  }
-}
 @media (max-width: 1000px) {
   .hero-content {
     width: 1000px;
@@ -97,7 +91,7 @@
 
 @media (max-width: 768px) {
   .hero-section {
-    height: 500px;
+    height: 700px;
   }
   .hero-content {
     width: 900px;
@@ -112,7 +106,7 @@
 
 @media (max-width: 480px) {
   .hero-section {
-    height: 400px;
+    height: 700px;
   }
   .hero-content {
     width: 700px;
