@@ -78,11 +78,11 @@ function ContactPage() {
           <div className="contact-info-col">
             <div className="info-item">
               <i className="fas fa-envelope"></i>
-              <a href="mailto:hello@email.com">Ironix@gmail.com</a>
+              <a href="mailto:ironix@gmail.com">ironix@gmail.com</a>
             </div>
             <div className="info-item">
               <i className="fas fa-phone-alt"></i>
-              <a href="tel:+1-123-123-123">+91 9876543210</a>
+              <a href="tel:+91 9876543210">+91 9876543210</a>
             </div>
             <div className="info-item">
               <i className="fas fa-map-marker-alt"></i>
@@ -92,7 +92,6 @@ function ContactPage() {
         </div>
       </div>
     </div>
-
     </div>
   );
 }
