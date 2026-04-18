@@ -121,7 +121,7 @@
   }
 }
 
-/* Why Choose Us Section */
+/* ── Section ── */
 .whyChooseUs {
   padding: 100px 0;
   background: linear-gradient(to bottom, #0a0a0a, #1a2f33, #000000);
@@ -131,44 +131,59 @@
 .whyChooseUs .container {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 24px;
 }
 
+/* ── Title ── */
 .why-title {
   text-align: start;
   margin-bottom: 60px;
 }
 
 .why-title h2 {
-  font-size: 48px;
+  font-size: clamp(32px, 5vw, 48px);
   font-weight: 700;
   color: white;
-  position: relative;
   display: inline-block;
-  padding-bottom: 15px;
+  padding-bottom: 12px;
+  border-bottom: 3px solid #4f9ea0;
+  margin: 0;
 }
 
-/* Cards Grid */
+/* ── Desktop grid ── */
 .why-cards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
 }
 
-/* Individual Card */
-.why-cards .card {
-  background: linear-gradient(to bottom, #edebeb 80%, #4f4d4d 150%);
+/* ── Mobile swiper — hidden by default ── */
+.why-swiper {
+  display: none !important;
+  width: 100%;
+  padding-bottom: 44px !important;
+}
 
+/* ── Card ── */
+.why-cards .card,
+.why-swiper .card {
+  background: linear-gradient(to bottom, #edebeb 80%, #4f4d4d 150%);
   border: none;
   border-radius: 20px;
   padding: 40px 30px;
   text-align: center;
   box-shadow: 0 7px 7px 0 rgb(0, 0, 0);
   max-width: 100%;
-  position: relative; /* Required for pseudo‑element */
-  overflow: hidden; /* Contain the shine effect */
+  position: relative;
+  overflow: hidden;
   z-index: 1;
+  height: 100%;
+  box-sizing: border-box;
 }
-.why-cards .card::before {
+
+/* ── Shine sweep ── */
+.why-cards .card::before,
+.why-swiper .card::before {
   content: "";
   position: absolute;
   top: 0;
@@ -186,8 +201,9 @@
   pointer-events: none;
 }
 
-.why-cards .card:hover::before {
-  animation: shine.8s forwards;
+.why-cards .card:hover::before,
+.why-swiper .card:hover::before {
+  animation: shine 0.8s forwards;
 }
 
 @keyframes shine {
@@ -198,42 +214,66 @@
     left: 150%;
   }
 }
-/* Icon */
+
+/* ── Icon ── */
 .card-icon {
   width: 80px;
   height: 80px;
   margin: 0 auto 15px;
   background: transparent;
   border-radius: 50%;
-  border: 3px solid;
+  border: 3px solid #1a2f33;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 36px;
-  color: black;
+  color: #1a2f33;
   transition:
     background 0.3s ease,
     color 0.3s ease;
 }
+.why-swiper .swiper-wrapper {
+  align-items: stretch;
+}
 
-/* Card Title */
-.why-cards .card h3 {
-  font-size: 24px;
-  font-weight: 600;
+.why-swiper .swiper-slide {
+  height: auto;
+}
+
+.why-swiper .swiper-slide .card {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* ── Card title ── */
+.why-cards .card h3,
+.why-swiper .card h3 {
+  font-size: 33px;
+  font-weight: bold;
   margin-bottom: 15px;
   color: #000000;
 }
 
-/* Card Description */
-.why-cards .card p {
+/* ── Card description ── */
+.why-cards .card p,
+.why-swiper .card p {
   font-size: 16px;
   line-height: 1.6;
   color: #000000;
   margin: 0;
-  padding: 0 30px;
+  padding: 0 20px;
 }
 
-/* Responsive Design */
+/* ── Swiper pagination ── */
+.swiper-pagination-bullet {
+  background: white !important;
+  opacity: 0.5;
+}
+.swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+/* ── Responsive ── */
 @media (max-width: 992px) {
   .why-cards {
     gap: 20px;
@@ -247,32 +287,43 @@
     font-size: 32px;
   }
   .why-cards .card h3 {
-    font-size: 22px;
+    font-size: 30px;
+    font-weight: bold;
   }
 }
 
 @media (max-width: 768px) {
   .whyChooseUs {
-    padding: 60px 20px;
+    padding: 60px 0;
+  }
+  .why-title {
+    padding: 0 20px;
   }
   .why-title h2 {
     font-size: 36px;
   }
+  .card {
+    height: 100%;
+  }
   .why-cards {
-    grid-template-columns: 1fr; /* Stack cards on mobile */
-    max-width: 500px;
-    margin: 0 auto;
+    display: none;
+  }
+  .why-swiper {
+    display: block !important;
   }
 }
 
 @media (max-width: 480px) {
   .whyChooseUs {
-    padding: 40px 15px;
+    padding: 40px 0;
+  }
+  .why-title {
+    padding: 0 15px;
   }
   .why-title h2 {
-    font-size: 34px;
+    font-size: 30px;
   }
-  .why-cards .card {
+  .why-swiper .card {
     padding: 25px 15px;
   }
   .card-icon {
@@ -280,14 +331,15 @@
     height: 60px;
     font-size: 28px;
   }
-  .why-cards .card h3 {
-    font-size: 20px;
+  .why-swiper .card h3 {
+    font-size: 25px;
+    font-weight: bold;
   }
-  .why-cards .card p {
+  .why-swiper .card p {
     font-size: 14px;
+    padding: 0 8px;
   }
 }
-
 /* ===== Classes Section ===== */
 .classes {
   padding: 100px 0;
