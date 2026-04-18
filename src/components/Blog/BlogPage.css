@@ -91,7 +91,7 @@
 
 @media (max-width: 768px) {
   .Blog-hero {
-    height: 800px;
+    height: 700px;
   }
   .Blog-content-box {
     padding-bottom: 200px;
@@ -101,6 +101,7 @@
   }
   .Blog-hero-content {
     gap: 15px;
+    margin-bottom: 60px
   }
 }
 
@@ -110,6 +111,7 @@
     align-items: center;
     gap: 10px;
     text-align: center;
+    margin-bottom: 90px
   }
   .Blog-hero-content h1 {
     font-size: 40px;
@@ -122,13 +124,13 @@
 
 @media (max-width: 480px) {
   .pricing-hero {
-    height: 700px;
+    height: 650px;
   }
   .pricing-content-box {
     padding-bottom: 200px;
   }
   .pricing-hero-content h1 {
-    font-size: 22px;
+    font-size: 20px;
   }
 }
 

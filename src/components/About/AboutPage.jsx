@@ -1,8 +1,14 @@
 import { Link } from 'react-router-dom';
 import './AboutPage.css';
 import { useEffect, useRef, useState } from 'react';
+import Swiper from "swiper";
+import { Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
 
 function AboutPage() {
+   const swiperRef = useRef(null);
+  const swiperInstance = useRef(null);
 
  const contentRef = useRef(null);
 
@@ -39,6 +45,38 @@ function AboutPage() {
   const totalCards = 7;
   const visibleCards = 2.5;
   const maxIndex = totalCards - Math.ceil(visibleCards); // 7 - 3 = 4
+
+ useEffect(() => {
+    const initSwiper = () => {
+      if (window.innerWidth <= 768) {
+        if (!swiperInstance.current) {
+          swiperInstance.current = new Swiper(swiperRef.current, {
+            modules: [Pagination],
+            slidesPerView: 1.15,
+            centeredSlides: true,
+            spaceBetween: 16,
+            pagination: { el: ".swiper-pagination", clickable: true },
+            breakpoints: {
+              480: { slidesPerView: 1.3, spaceBetween: 20 },
+            },
+          });
+        }
+      } else {
+        if (swiperInstance.current) {
+          swiperInstance.current.destroy(true, true);
+          swiperInstance.current = null;
+        }
+      }
+    };
+
+    initSwiper();
+    window.addEventListener("resize", initSwiper);
+    return () => {
+      window.removeEventListener("resize", initSwiper);
+      swiperInstance.current?.destroy(true, true);
+    };
+  }, []);
+
 
   useEffect(() => {
     const computeStep = () => {
@@ -167,35 +205,122 @@ function AboutPage() {
 
 
 
-    <div className="whyChooseUs">
-        <div className="container">
-          <div className="why-title">
-            <h2>Why Us?</h2>
+      <div className="whyChooseUs">
+      <div className="container">
+
+        <div className="why-title">
+          <h2>Why Us?</h2>
+        </div>
+
+        {/* ── Desktop grid ── */}
+        <div className="why-cards">
+          <div className="card">
+            <div className="card-icon">
+              <i className="fa fa-check"></i>
+            </div>
+            <h3>Certified trainers</h3>
+            <p>
+              Discover the difference of working with our certified trainers as
+              you embark on a transformative fitness experience at Ironix.
+            </p>
           </div>
-          <div className="why-cards">
-            <div className="card">
-              <div className="card-icon"><i className="fa fa-check"></i></div>
-              <h3>Certified trainers</h3>
-              <p>Discover the difference of working with our certified trainers as you embark on a transformative fitness experience at Ironix.</p>
+          <div className="card">
+            <div className="card-icon">
+              <i className="fas fa-fire-alt"></i>
             </div>
-            <div className="card">
-              <div className="card-icon"><i className='fas fa-fire-alt'></i></div>
-              <h3>Motivation</h3>
-              <p>Unlock your full potential and embrace the power of fitness motivation with us. At Ironix, we understand that the journey to a healthier.</p>
+            <h3>Motivation</h3>
+            <p>
+              Unlock your full potential and embrace the power of fitness
+              motivation with us. At Ironix, we understand that the journey to
+              a healthier.
+            </p>
+          </div>
+          <div className="card">
+            <div className="card-icon">
+              <i className="far fa-smile"></i>
             </div>
-            <div className="card">
-              <div className="card-icon"><i className='far fa-smile'></i></div>
-              <h3>Friendly staff</h3>
-              <p>Our community is not just about workouts, but about building connections and friendships that make your fitness.</p>
+            <h3>Friendly staff</h3>
+            <p>
+              Our community is not just about workouts, but about building
+              connections and friendships that make your fitness.
+            </p>
+          </div>
+          <div className="card">
+            <div className="card-icon">
+              <i className="fas fa-heart"></i>
             </div>
-            <div className="card">
-              <div className="card-icon"><i className='fas fa-heart'></i></div>
-              <h3>Support</h3>
-              <p>We understand that the path to a healthier lifestyle can be challenging, and that's why our commitment to your success goes.</p>
-            </div>
+            <h3>Support</h3>
+            <p>
+              We understand that the path to a healthier lifestyle can be
+              challenging, and that's why our commitment to your success goes.
+            </p>
           </div>
         </div>
+
+        {/* ── Mobile swiper ── */}
+        <div className="why-swiper swiper" ref={swiperRef}>
+          <div className="swiper-wrapper">
+
+            <div className="swiper-slide">
+              <div className="card">
+                <div className="card-icon">
+                  <i className="fa fa-check"></i>
+                </div>
+                <h3>Certified trainers</h3>
+                <p>
+                  Discover the difference of working with our certified trainers
+                  as you embark on a transformative fitness experience at Ironix.
+                </p>
+              </div>
+            </div>
+
+            <div className="swiper-slide">
+              <div className="card">
+                <div className="card-icon">
+                  <i className="fas fa-fire-alt"></i>
+                </div>
+                <h3>Motivation</h3>
+                <p>
+                  Unlock your full potential and embrace the power of fitness
+                  motivation with us. At Ironix, we understand that the journey
+                  to a healthier.
+                </p>
+              </div>
+            </div>
+
+            <div className="swiper-slide">
+              <div className="card">
+                <div className="card-icon">
+                  <i className="far fa-smile"></i>
+                </div>
+                <h3>Friendly staff</h3>
+                <p>
+                  Our community is not just about workouts, but about building
+                  connections and friendships that make your fitness.
+                </p>
+              </div>
+            </div>
+
+            <div className="swiper-slide">
+              <div className="card">
+                <div className="card-icon">
+                  <i className="fas fa-heart"></i>
+                </div>
+                <h3>Support</h3>
+                <p>
+                  We understand that the path to a healthier lifestyle can be
+                  challenging, and that's why our commitment to your success
+                  goes.
+                </p>
+              </div>
+            </div>
+
+          </div>
+          <div className="swiper-pagination"></div>
+        </div>
+
       </div>
+    </div>
 
 
 

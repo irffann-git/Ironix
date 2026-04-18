@@ -4,7 +4,7 @@
 .contact-hero {
   position: relative;
   width: 100%;
-  height: 800px; /* consistent with homepage */
+  height: 120vh; /* consistent with homepage */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -92,10 +92,11 @@
 
 @media (max-width: 768px) {
   .contact-hero {
-    height: 800px;
+    height: 700px;
   }
   .contact-content-box {
     padding-bottom: 200px;
+    margin-bottom: 60px;
   }
   .contact-hero-content h1 {
     font-size: 45px;
@@ -124,28 +125,21 @@
 
 @media (max-width: 480px) {
   .contact-hero {
-    height: 700px;
+    height: 650px;
   }
   .contact-content-box {
     padding-bottom: 200px;
+    margin-bottom: 90px;
   }
   .contact-hero-content h1 {
-    font-size: 22px;
+    font-size: 25px;
   }
 }
 
 
 
 
-
-
-
-
-
-
-
 .contact-page {
-  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -155,8 +149,9 @@
 .contact-container {
   max-width: 1100px;
   width: 100%;
+  margin: 20px;
   background: white;
-  border-radius: 40px;
+
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
   padding: 60px 50px;
 }

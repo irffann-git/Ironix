@@ -91,10 +91,12 @@
 
 @media (max-width: 768px) {
   .classes-hero {
-    height: 800px;
+    height: 700px;
   }
   .classes-content-box {
     padding-bottom: 200px;
+    margin-bottom: 60px;
+    
   }
   .classes-hero-content h1 {
     font-size: 45px;
@@ -122,13 +124,14 @@
 
 @media (max-width: 480px) {
   .classes-hero {
-    height: 700px;
+    height: 650px;
   }
   .classes-content-box {
     padding-bottom: 200px;
+    margin-bottom: 90px;
   }
   .classes-hero-content h1 {
-    font-size: 22px;
+    font-size: 28px;
   }
 }
 

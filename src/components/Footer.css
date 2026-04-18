@@ -4,6 +4,7 @@
   color: #ccc;
   font-family: "Montserrat", sans-serif;
   padding: 60px 0 20px;
+  
 }
 
 .footer-alt-main {
@@ -19,14 +20,26 @@
 }
 
 .footer-alt-logo {
-  width: 140px;
+  width: 250px;
   margin-bottom: 15px;
 }
-
+.img_div{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.footer-top-text{
+  width: 100%;
+  text-align: center;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #cccccc9c;
+}
 .footer-alt-text {
-  font-size: 0.95rem;
+  font-size: .9rem;
   line-height: 1.6;
   color: #aaa;
+  font-weight: 800;
   margin: 0;
 }
 

@@ -11,13 +11,19 @@ return(
 <footer className="footer-alt">
   <div className="container">
     {/* Main Footer Content */}
+    <div className="footer-top-text">
+       <p className="footer-alt-text">
+          Ironix is more than a gym – it's a community. Join us to transform your fitness journey.
+        </p>
+    </div>
     <div className="footer-alt-main">
       {/* Column 1 - Brand */}
       <div className="footer-alt-col">
-        <img src="/ironix.png" alt="Ironix" className="footer-alt-logo" />
-        <p className="footer-alt-text">
-          Ironix is more than a gym – it's a community. Join us to transform your fitness journey.
-        </p>
+        <div className="img_div">
+                  <img src="/ironix.png" alt="Ironix" className="footer-alt-logo" />
+        </div>
+
+       
       </div>
 
       {/* Column 2 - Quick Links */}
