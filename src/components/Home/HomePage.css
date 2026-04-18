@@ -95,6 +95,7 @@
   }
   .hero-content {
     width: 900px;
+    margin-bottom: 60px;
   }
   .hero-content .first {
     font-size: 40px;
@@ -106,22 +107,23 @@
 
 @media (max-width: 480px) {
   .hero-section {
-    height: 700px;
+    height: 650px;
   }
   .hero-content {
     width: 700px;
+    margin-bottom: 90px;
   }
   .hero-content .first {
-    font-size: 30px;
+    font-size: 35px;
   }
   .hero-content .last {
-    font-size: 20px;
+    font-size: 25px;
   }
 }
 
 /* Why Choose Us Section */
 .whyChooseUs {
-    padding: 100px 0;
+  padding: 100px 0;
   background: linear-gradient(to bottom, #0a0a0a, #1a2f33, #000000);
   color: white;
 }
@@ -162,8 +164,8 @@
   text-align: center;
   box-shadow: 0 7px 7px 0 rgb(0, 0, 0);
   max-width: 100%;
-  position: relative;          /* Required for pseudo‑element */
-  overflow: hidden;            /* Contain the shine effect */
+  position: relative; /* Required for pseudo‑element */
+  overflow: hidden; /* Contain the shine effect */
   z-index: 1;
 }
 .why-cards .card::before {
@@ -466,34 +468,32 @@
 
 .view-btn:hover::before {
   width: 100%;
-    transform: scaleX(1);
+  transform: scaleX(1);
 }
 
 .view-btn:hover {
   color: white;
 }
-@media (max-width: 1203px){
-.learn-more {                     
+@media (max-width: 1203px) {
+  .learn-more {
     padding: 6px 14px;
     font-size: 0.8rem;
   }
 }
 
-
-@media (max-width: 1069px){
-.card-overlay h3 {
-  font-size: 1.3rem;
-  transform: translateY(100px); /* Start lower */
-  transition: transform 0.4s ease;
-}
-.learn-more {
-    opacity: 1;                       
-    pointer-events: auto;               
-    bottom: 20px;                      
+@media (max-width: 1069px) {
+  .card-overlay h3 {
+    font-size: 1.3rem;
+    transform: translateY(100px); /* Start lower */
+    transition: transform 0.4s ease;
+  }
+  .learn-more {
+    opacity: 1;
+    pointer-events: auto;
+    bottom: 20px;
     padding: 6px 10px;
     font-size: 0.7rem;
   }
-
 }
 
 @media (max-width: 992px) {
@@ -501,29 +501,25 @@
     font-size: 2.8rem;
     margin-bottom: 50px;
   }
-.card-overlay{
-  align-items: end;
-}
+  .card-overlay {
+    align-items: end;
+  }
   .classes-grid {
     gap: 20px;
   }
   .card-overlay h3 {
     font-size: 1rem;
-    transform: translateY(0);        
-    transition: none;   
+    transform: translateY(0);
+    transition: none;
     margin-bottom: 60px;
-
-                   
   }
   .learn-more {
-    opacity: 1;                       
-    pointer-events: auto;               
-    bottom: 20px;                      
+    opacity: 1;
+    pointer-events: auto;
+    bottom: 20px;
     padding: 6px 10px;
     font-size: 0.5rem;
   }
-
-
 }
 @media (max-width: 768px) {
   .classes-title {
@@ -547,9 +543,9 @@
   }
 
   .learn-more {
-    opacity: 1;            
+    opacity: 1;
     pointer-events: auto;
-    bottom: 15px;                 
+    bottom: 15px;
     padding: 8px 12px;
     font-size: 0.8rem;
   }
@@ -573,20 +569,18 @@
 
   .card-overlay h3 {
     font-size: 1rem;
-    transform: translateY(0);  
-    margin-bottom: 77px;       
+    transform: translateY(0);
+    margin-bottom: 77px;
   }
 
   .learn-more {
-    opacity: 1;                      
+    opacity: 1;
     pointer-events: auto;
-    bottom: 20px;                      
+    bottom: 20px;
     padding: 10px 10px;
-    font-size: .6rem;
+    font-size: 0.6rem;
     font-weight: 700;
   }
-
-
 
   .view-btn {
     padding: 12px 40px;
@@ -595,24 +589,20 @@
 }
 
 @media (max-width: 435px) {
-.card-overlay h3 {
-    font-size: .8rem;
-    transform: translateY(0);  
-    margin-bottom: 60px;       
+  .card-overlay h3 {
+    font-size: 0.8rem;
+    transform: translateY(0);
+    margin-bottom: 60px;
   }
-.learn-more {
-    opacity: 1;                      
+  .learn-more {
+    opacity: 1;
     pointer-events: auto;
-    bottom: 20px;                      
+    bottom: 20px;
     padding: 6px;
-    font-size: .4rem;
+    font-size: 0.4rem;
     font-weight: 700;
   }
 }
-
-
-
-
 
 /* ===== Pricing Section ===== */
 .pricing {
@@ -644,7 +634,9 @@
   padding: 40px 30px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   border: 1px solid rgba(255, 255, 255, 0.05);
   display: flex;
   flex-direction: column;
@@ -658,7 +650,7 @@
 
 .popular {
   background: linear-gradient(145deg, #0b0f8c, #121111);
-  z-index: 2;  
+  z-index: 2;
 }
 .pricing-card.popular {
   position: relative;
@@ -696,9 +688,8 @@
 }
 
 .popular:hover {
-  transform:translateY(-1px);
+  transform: translateY(-1px);
 }
-
 
 .package-name {
   font-size: 2rem;
@@ -715,7 +706,6 @@
   justify-content: center;
   margin-bottom: 10px;
 }
-
 
 .amount {
   font-size: 4rem;
@@ -901,9 +891,6 @@
   }
 }
 
-
-
-
 /* ===== Trainer Section ===== */
 .trainers {
   padding: 100px 0;
@@ -934,7 +921,9 @@
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   text-align: center;
   padding-bottom: 30px;
 }
