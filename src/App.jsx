@@ -11,6 +11,7 @@ import Blog from "./pages/Blog";
 import Article from "./pages/Article";
 import ScrollToTop from "./components/ScrollToTop";
 import Contact from "./pages/Contact";
+import Class_content from "./pages/Class-content";
 
 
 
@@ -30,6 +31,7 @@ function App() {
         <Route path="/blog" element={<Blog/>}/>
         <Route path="/blog/:id" element={<Article/>}/>
         <Route path="/Contact" element={<Contact/>}/>
+        <Route path="/Class_content" element={<Class_content/>}/>
       </Routes>
       <Footer/>
       

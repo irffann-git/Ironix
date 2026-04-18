@@ -84,7 +84,7 @@ const [billingPeriod, setBillingPeriod] = useState('yearly'); // 'monthly' or 'y
               <img src="/hitt.jpg" alt="HIIT" />
               <div className="card-overlay">
                 <h3>HIIT</h3>
-              <Link to="/">  <button className="learn-more">Learn More</button></Link>
+              <Link to="/Class_content">  <button className="learn-more">Learn More</button></Link>
               </div>
             </div>
 
@@ -92,7 +92,7 @@ const [billingPeriod, setBillingPeriod] = useState('yearly'); // 'monthly' or 'y
               <img src="/crossfit.jpg" alt="CrossFit" />
               <div className="card-overlay">
                 <h3>CrossFit</h3>
-              <Link to="/">  <button className="learn-more">Learn More</button></Link>
+              <Link to="/Class_content">  <button className="learn-more">Learn More</button></Link>
               </div>
             </div>
 
@@ -100,7 +100,7 @@ const [billingPeriod, setBillingPeriod] = useState('yearly'); // 'monthly' or 'y
               <img src="/boxing.jpg" alt="Kickboxing" />
               <div className="card-overlay">
                 <h3>Kickboxing</h3>
-              <Link to="/">  <button className="learn-more">Learn More</button></Link>
+              <Link to="/Class_content">  <button className="learn-more">Learn More</button></Link>
               </div>
             </div>
 
@@ -108,14 +108,15 @@ const [billingPeriod, setBillingPeriod] = useState('yearly'); // 'monthly' or 'y
               <img src="/yoga.jpg" alt="yoga" />
               <div className="card-overlay">
                 <h3>Yoga</h3>
-              <Link to="/">  <button className="learn-more">Learn More</button></Link>
+              <Link to="/Class_content">  <button className="learn-more">Learn More</button></Link>
               </div>
             </div>
 
           </div>
 
           <div className="view-btn-wrapper">
-            <button className="view-btn">View All</button>
+            <Link to="/classes"><button className="view-btn">View All</button></Link>
+            
           </div>
         </div>
         

@@ -29,7 +29,8 @@ function Navbar() {
       <div className="navbar">
         {/* Logo */}
         <div className="logo">
-          <img src="/ironix.png" alt="logo" />
+          <Link to="/"><img src="/ironix.png" alt="logo" /></Link>
+          
         </div>
 
         {/* Desktop Navigation Links */}
