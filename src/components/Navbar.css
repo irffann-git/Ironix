@@ -283,3 +283,144 @@
     width: 70px;
   }
 }
+
+/* ===== Auth Overlay ===== */
+.login-popup {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.login-popup.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ===== Modal Card ===== */
+.login-div {
+  background: #1a1919;
+  border-radius: 24px;
+  padding: 48px 40px 36px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+.login-popup.show .login-div {
+  transform: translateY(0);
+}
+
+/* Close button */
+.login-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  border: none;
+  width: 32px;
+  background:#1a1919 ;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 0.8rem;
+}
+
+
+/* Title */
+.login-title {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #ccc;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.login-sub {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin: 0 0 32px;
+}
+
+/* Buttons */
+.login-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.login-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 20px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 0.3px;
+  transition: background 0.2s, transform 0.15s, color 0.2s;
+}
+
+.login-btn.primary {
+  background: #0676cc;
+  color: #fff;
+}
+
+.login-btn.primary:hover {
+  background: #ffff;
+  color: #111;
+  transform: translateY(-2px);
+}
+
+.login-btn.secondary {
+  background: #ffff;
+  color: #111;
+}
+
+.login-btn.secondary:hover {
+  color: #0676cc;
+  transform: translateY(-2px);
+}
+
+/* Note */
+.login-note {
+  font-size: 0.78rem;
+  color: #9ca3af;
+  line-height: 1.6;
+}
+
+.login-note a {
+  color: #6b7280;
+  text-decoration: underline;
+}
+
+
+/* Mobile */
+@media (max-width: 480px) {
+  .login-div {
+    padding: 40px 24px 28px;
+    border-radius: 18px;
+  }
+  .login-title {
+    font-size: 1.25rem;
+  }
+}

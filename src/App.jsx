@@ -12,6 +12,8 @@ import Article from "./pages/Article";
 import ScrollToTop from "./components/ScrollToTop";
 import Contact from "./pages/Contact";
 import Class_content from "./pages/Class-content";
+import SignIn from "./components/signin";
+import SignUp from "./components/signup";
 
 
 
@@ -32,6 +34,8 @@ function App() {
         <Route path="/blog/:id" element={<Article/>}/>
         <Route path="/Contact" element={<Contact/>}/>
         <Route path="/Class_content" element={<Class_content/>}/>
+        <Route path="/Signin" element={<SignIn/>}/>
+        <Route path="/Signup" element={<SignUp/>}/>
       </Routes>
       <Footer/>
       
