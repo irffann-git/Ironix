@@ -1,66 +1,73 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const mobileMenuRef = useRef(null);
+  const hamburgerRef = useRef(null);
 
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
-
-  const closeMobileMenu = () => {
-    setIsMobileMenuOpen(false);
-  };
+  const toggleMobileMenu = () => setIsMobileMenuOpen((prev) => !prev);
+  const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth > 700) {
+      if (window.innerWidth > 700) setIsMobileMenuOpen(false);
+    };
+
+    // close on outside click
+    const handleOutsideClick = (e) => {
+      if (
+        mobileMenuRef.current &&
+        !mobileMenuRef.current.contains(e.target) &&
+        hamburgerRef.current &&
+        !hamburgerRef.current.contains(e.target)
+      ) {
         setIsMobileMenuOpen(false);
       }
     };
 
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    document.addEventListener("mousedown", handleOutsideClick);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
   }, []);
-  
+
   return (
     <div className="navbar-container">
       <div className="navbar">
-        {/* Logo */}
         <div className="logo">
           <Link to="/"><img src="/ironix.png" alt="logo" /></Link>
-          
         </div>
 
-        {/* Desktop Navigation Links */}
         <div className="nav_links">
-          <Link to="/">Home</Link>             
-          <Link to="/about">About</Link>       
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
           <Link to="/classes">Classes</Link>
-          <Link to="/pricing">Pricing</Link>          
-          <Link to="/blog">Blog</Link>    
-          <Link to="/contact">Contact</Link>  
+          <Link to="/pricing">Pricing</Link>
+          <Link to="/blog">Blog</Link>
+          <Link to="/contact">Contact</Link>
         </div>
 
-        {/* Desktop Sign In */}
         <div className="nav-actions">
           <button className="signin-btn">Sign In</button>
         </div>
 
-        {/* Hamburger Icon (visible on mobile) */}
-        <div className="hamburger" onClick={toggleMobileMenu}>
+        <div className="hamburger" ref={hamburgerRef} onClick={toggleMobileMenu}>
           <i className="fas fa-bars"></i>
         </div>
       </div>
 
       {/* Mobile Menu */}
-      <div className={`mobileNavbar ${isMobileMenuOpen ? "show" : ""}`}>
+      <div
+        ref={mobileMenuRef}
+        className={`mobileNavbar ${isMobileMenuOpen ? "show" : ""}`}
+      >
         <div className="head">
           <div className="mob-nav-actions">
-            <button className="signin-btn" onClick={closeMobileMenu}>
-              Sign In
-            </button>
+            <button className="signin-btn" onClick={closeMobileMenu}>Sign In</button>
           </div>
           <div className="nav-close" onClick={closeMobileMenu}>
             <i className="fas fa-close"></i>

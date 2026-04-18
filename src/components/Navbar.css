@@ -55,7 +55,9 @@
   opacity: 0;
   visibility: hidden;
   transform: translateY(-10px);
-  transition: opacity 1s ease, transform 0.8s ease;
+  transition:
+    opacity 1s ease,
+    transform 0.8s ease;
 }
 
 .mega-menu-trigger:hover .mega-menu {
@@ -131,7 +133,7 @@
 
 /* Hamburger icon - hidden on desktop */
 
-.hamburger{
+.hamburger {
   display: none;
 }
 .hamburger i {
@@ -142,20 +144,25 @@
 
 /* Mobile menu - hidden by default */
 .mobileNavbar {
-  display: none;
-  position: absolute;
+  position: fixed;
   right: 0;
   top: 0;
   z-index: 99;
-  height: auto;
+  height: 100vh;
   width: 400px;
-  background-color: #222; /* changed to dark gray for better visibility */
+  background-color: #222;
   color: white;
   box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
+  overflow-y: auto;
+  transform: translateX(100%);        /* hidden off-screen to the right */
+  transition: transform 0.35s ease;   /* smooth slide */
+  visibility: hidden;
+  transition: transform 0.35s ease, visibility 0.35s ease;
 }
 
 .mobileNavbar.show {
-  display: block;
+  transform: translateX(0);           /* slide in */
+  visibility: visible;
 }
 
 .mobileNavbar .head {
@@ -246,10 +253,9 @@
 
 /* Mobile responsive */
 @media (max-width: 700px) {
-
   .logo img {
-  width: 100px;
-}
+    width: 100px;
+  }
   .navbar {
     justify-content: space-between;
     padding: 20px 20px 0 20px;
@@ -268,13 +274,12 @@
   }
 
   .mobileNavbar {
-    width: 80%; /* adjust for smaller screens */
+    width: 80%;
     max-width: 400px;
   }
-
 }
 @media (max-width: 500px) {
-.logo img {
-  width: 70px;
-}
+  .logo img {
+    width: 70px;
+  }
 }
